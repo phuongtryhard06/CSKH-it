@@ -1,49 +1,4 @@
-# Environment & Secrets
-.env
-*.env
-!.env.example
-backend/.env
-frontend/.env
-backend/app/data/ai_settings.json
-
-# SSL & Certificates
-ssl/
-*.pem
-*.key
-*.crt
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-.pytest_cache/
-.coverage
-htmlcov/
-.tox/
-.nox/
-venv/
-.venv/
-ENV/
-env/
-
-# Node & Frontend
+# Node & Frontend Dependencies and Build
 node_modules/
 frontend/node_modules/
 frontend/dist/
@@ -52,19 +7,27 @@ frontend/dist-ssr/
 *.tsbuildinfo
 .eslintcache
 
+# Python Caches & Virtual Envs
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+ENV/
+env/
+
 # Logs
 logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 
-# OS & Editors
+# OS & IDE
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/*
 !.vscode/extensions.json
-*.swp
-*.swo
