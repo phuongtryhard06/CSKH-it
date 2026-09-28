@@ -362,9 +362,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from fastapi.responses import RedirectResponse
+
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "app": settings.APP_NAME, "version": settings.APP_VERSION}
+
+@app.get("/docs", include_in_schema=False)
+@app.get("/api/docs", include_in_schema=False)
+async def docs_redirect():
+    return RedirectResponse(url=f"{settings.API_V1_PREFIX}/docs")
+
+@app.get("/redoc", include_in_schema=False)
+@app.get("/api/redoc", include_in_schema=False)
+async def redoc_redirect():
+    return RedirectResponse(url=f"{settings.API_V1_PREFIX}/redoc")
 
 from app.api.v1.router import api_router
 
